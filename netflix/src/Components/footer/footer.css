@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.list-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+}
+
+.list-item {
+    color: rgb(87, 89, 89);
+    width: 23%;
+    margin-bottom: 10px; 
+  }
+  .footer_button{
+    color: rgb(87, 89, 89);
+
+  }
+
+  .footer_button:hover{
+    color: white;
+  }
+
+  .footer_copyright{
+    color: rgb(87, 89, 89);
+  }
+
+
