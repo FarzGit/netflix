@@ -8,7 +8,7 @@ function Banner() {
 
 
     return (
-        <div className='banner h-[600px] '>
+        <div className='banner h-[575px] '>
             <div className='content pt-[250px]'>
                 <h1 className=' film pl-10 font-extrabold text-6xl'>WALKING DEAD</h1>
             </div>
@@ -23,6 +23,8 @@ function Banner() {
                 <button className='button_play text-black bg-white w-[110px] h-[39px] rounded font-bold flex items-center justify-center transform transition-transform hover:scale-90'><FaPlay />Play</button>
                 <button className='button_info ml-6 bg-gray-600 w-[120px] h-[39px] rounded font-bold flex items-center justify-center transform transition-transform hover:scale-90'><IoMdInformationCircleOutline size={25}/>More Info</button>
             </div>
+
+            <div className="fade"></div>
 
         </div>
     )
