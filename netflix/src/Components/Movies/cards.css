@@ -7,3 +7,19 @@
 .card::-webkit-scrollbar{
     display: none;
 }
+
+.movieImage{
+    cursor: pointer;
+}
+
+.modal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 650px;
+  background-color: #fff; 
+  box-shadow: 0 0 24px rgba(64, 81, 97, 0.96); 
+  padding: 16px;
+  border-radius: 20px;
+}
