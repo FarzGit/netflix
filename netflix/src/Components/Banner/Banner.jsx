@@ -2,20 +2,32 @@
 import './Banner.css'
 import { FaPlay } from "react-icons/fa";
 import { IoMdInformationCircleOutline } from "react-icons/io";
+import axios from '../../axios'
+import { useEffect,useState } from 'react';
+import {API_KEY,imageUrl} from '../../constants/constants'
 
 function Banner() {
 
+  const [movie,setMovie] = useState([])
 
+useEffect(()=>{
+    axios.get(`trending/all/week?api_key=${API_KEY}&language=en-US`)
+    .then((response)=>{
+        const randomIndex = Math.floor(Math.random() * response.data.results.length)
+        // console.log(response.data.results[12])
+        setMovie(response.data.results[randomIndex])
+    })
+},[])
+// console.log('movei' , movie)
 
     return (
-        <div className='banner h-[575px] '>
+            <div className='banner h-[575px]'style={{backgroundImage:`url(${movie?imageUrl+movie.backdrop_path:""})`}} >
             <div className='content pt-[250px]'>
-                <h1 className=' film pl-10 font-extrabold text-6xl'>WALKING DEAD</h1>
+                <h1 className=' film pl-10 font-extrabold text-6xl'>{ movie?movie.title:""}</h1>
             </div>
             <div className='discription max-w-[500px] pl-10 pt-4 font-medium'>
                 <span className=''>
-                    In the wake of zombie apocalypse, surviverse old on the hope of humanity
-                     by banding together to wage a fightfor their own survival.
+                    {movie.overview}
                     
                 </span>
             </div>

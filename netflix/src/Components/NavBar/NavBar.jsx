@@ -1,11 +1,30 @@
 import './NavBar.css'
 import { FiSearch } from "react-icons/fi";
 import { FaRegBell } from "react-icons/fa";
+import { useEffect, useState } from 'react';
 
 function NavBar() {
+
+    const [isScrolled , setIsScrolled] = useState(false)
+
+    useEffect(()=>{
+        const handleScroll = ()=>{
+            const scrolled = window.scrollY > 0
+            setIsScrolled(scrolled)
+        }
+        window.addEventListener('scroll',handleScroll)
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    },[])
+
+    
+
+
     return (
         <div className=' items-center  '>
-            <div className='navbar fixed h-[67px] flex items-center space-x-4 w-full justify-between bg-black bg-opacity-0 ' >
+            <div style={{ backgroundColor: isScrolled ? 'black' : 'transparent', transition: 'background-color 0.3s ease' }} className='navbar  fixed h-[67px] flex items-center space-x-4 w-full justify-between bg-black bg-opacity-0 ' >
                 <div className="flex justify-between space-x-5">
                     <img className="logo ml-3 md:ml-5 w-[50px] h-[20px]  md:w-[80px]" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1920px-Netflix_2015_logo.svg.png" alt="Netflix Logo" />
 
