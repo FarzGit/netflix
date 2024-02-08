@@ -14,7 +14,7 @@ This project is a clone of Netflix, built using ReactJS, Tailwind CSS, and fetch
 ## Screenshots
 
 <img scr="netflix/public/Screenshot 2024-02-08 173118.png"></img>
-<img scr="netflix/public/Screenshot 2024-02-08 173135.png"></img>
+<img scr="netflix/public/Screenshot 2024-02-08 173118.png"></img>
 
 ## Usage
 
